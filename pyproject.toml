@@ -1,0 +1,61 @@
+[project]
+name = "credit-xai"
+version = "1.0.0"
+description = "Explainable Credit Assistant: credit scoring con spiegazioni SHAP, controfattuali, LLM verificato e fairness audit"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pandas>=2.2",
+    "numpy>=1.26",
+    "scikit-learn>=1.5",
+    "xgboost>=2.0",
+    "optuna>=3.6",
+    "shap>=0.46",
+    "dice-ml>=0.11",
+    "fairlearn>=0.11",
+    "joblib>=1.4",
+    "httpx>=0.27",
+    "matplotlib>=3.8",
+    "tabulate>=0.9",
+]
+
+[project.optional-dependencies]
+# API e interfaccia (usate anche nel Docker)
+app = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+    "streamlit>=1.35",
+]
+# Tracking degli esperimenti (facoltativo: train.py lo usa se installato)
+tracking = ["mlflow>=2.14"]
+# Sviluppo: tutto quello che serve in locale
+dev = [
+    "credit-xai[app]",
+    "seaborn>=0.13",
+    "pytest>=8",
+    "ruff>=0.6",
+    "pre-commit>=3.7",
+    "jupyterlab>=4.0",
+    "ipykernel>=6.29",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/credit_xai"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+ignore = ["E501"]  # la lunghezza delle righe la gestisce ruff format
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+filterwarnings = ["ignore::UserWarning", "ignore::DeprecationWarning", "ignore::FutureWarning"]

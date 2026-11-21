@@ -1,0 +1,48 @@
+{
+  "logistic_regression": {
+    "threshold": 0.28,
+    "cv_auc": 0.7593,
+    "auc": 0.8099,
+    "f1": 0.5492,
+    "precision": 0.3985,
+    "recall": 0.8833,
+    "accuracy": 0.565,
+    "brier": 0.1831,
+    "expected_cost": 0.575,
+    "approval_rate": 0.335,
+    "confusion": {
+      "tn": 60,
+      "fp": 80,
+      "fn": 7,
+      "tp": 53
+    }
+  },
+  "xgboost": {
+    "threshold": 0.11,
+    "cv_auc": 0.7951,
+    "auc": 0.8036,
+    "f1": 0.5654,
+    "precision": 0.4122,
+    "recall": 0.9,
+    "accuracy": 0.585,
+    "brier": 0.1586,
+    "expected_cost": 0.535,
+    "approval_rate": 0.345,
+    "confusion": {
+      "tn": 63,
+      "fp": 77,
+      "fn": 6,
+      "tp": 54
+    },
+    "params": {
+      "n_estimators": 600,
+      "max_depth": 6,
+      "learning_rate": 0.013211315878842863,
+      "subsample": 0.7979793886587423,
+      "colsample_bytree": 0.9307047540759698,
+      "min_child_weight": 1,
+      "reg_lambda": 0.013773323547914414,
+      "scale_pos_weight": 1.3278516550255064
+    }
+  }
+}

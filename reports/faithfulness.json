@@ -1,0 +1,10 @@
+{
+  "n": 100,
+  "faithful_rate": 1.0,
+  "unsupported_rate": 0.0,
+  "direction_error_rate": 0.0,
+  "mean_coverage_top3": 1.0,
+  "sensitive_leak_rate": 0.0,
+  "outcome_consistency_rate": 1.0,
+  "provider": "template"
+}

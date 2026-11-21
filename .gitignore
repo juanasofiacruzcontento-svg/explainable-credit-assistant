@@ -1,0 +1,27 @@
+# Dati: non versionati, si rigenerano con `python -m credit_xai.pipeline`
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Artefatti locali
+models/
+logs/
+mlruns/
+reports/faithfulness_cases.jsonl
+# reports/*.json e docs/*.md SÌ: mostrano i risultati nel portfolio
+
+# Segreti
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+
+# Notebook e sistema
+.ipynb_checkpoints/
+.DS_Store

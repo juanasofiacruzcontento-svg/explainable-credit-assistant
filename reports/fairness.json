@@ -1,0 +1,99 @@
+{
+  "audit": {
+    "sex": {
+      "by_group": [
+        {
+          "sex": "F",
+          "approval_rate": 0.2787,
+          "false_rejection_rate": 0.6341,
+          "false_approval_rate": 0.1,
+          "n": 61,
+          "auc": 0.778
+        },
+        {
+          "sex": "M",
+          "approval_rate": 0.3741,
+          "false_rejection_rate": 0.5152,
+          "false_approval_rate": 0.1,
+          "n": 139,
+          "auc": 0.8129
+        }
+      ],
+      "demographic_parity_difference": 0.0954,
+      "equalized_odds_difference": 0.119,
+      "disparate_impact_ratio": 0.745
+    },
+    "age_group": {
+      "by_group": [
+        {
+          "age_group": "<=25",
+          "approval_rate": 0.2045,
+          "false_rejection_rate": 0.75,
+          "false_approval_rate": 0.15,
+          "n": 44,
+          "auc": 0.725
+        },
+        {
+          "age_group": "26-35",
+          "approval_rate": 0.3485,
+          "false_rejection_rate": 0.5111,
+          "false_approval_rate": 0.0476,
+          "n": 66,
+          "auc": 0.836
+        },
+        {
+          "age_group": "36-50",
+          "approval_rate": 0.4426,
+          "false_rejection_rate": 0.4468,
+          "false_approval_rate": 0.0714,
+          "n": 61,
+          "auc": 0.8511
+        },
+        {
+          "age_group": ">50",
+          "approval_rate": 0.3448,
+          "false_rejection_rate": 0.625,
+          "false_approval_rate": 0.2,
+          "n": 29,
+          "auc": 0.7417
+        }
+      ],
+      "demographic_parity_difference": 0.2381,
+      "equalized_odds_difference": 0.3032,
+      "disparate_impact_ratio": 0.4621
+    },
+    "foreign_worker": {
+      "by_group": [
+        {
+          "foreign_worker": "no",
+          "approval_rate": 0.5,
+          "false_rejection_rate": 0.4,
+          "false_approval_rate": 0.0,
+          "n": 6,
+          "auc": 1.0
+        },
+        {
+          "foreign_worker": "sì",
+          "approval_rate": 0.3402,
+          "false_rejection_rate": 0.5556,
+          "false_approval_rate": 0.1017,
+          "n": 194,
+          "auc": 0.798
+        }
+      ],
+      "demographic_parity_difference": 0.1598,
+      "equalized_odds_difference": 0.1556,
+      "disparate_impact_ratio": 0.6804
+    }
+  },
+  "mitigation": {
+    "attribute": "age_group",
+    "constraint": "equalized_odds",
+    "accuracy_before": 0.585,
+    "accuracy_after": 0.79,
+    "equalized_odds_difference_before": 0.3032,
+    "equalized_odds_difference_after": 0.2643,
+    "demographic_parity_difference_before": 0.2381,
+    "demographic_parity_difference_after": 0.1846
+  }
+}
